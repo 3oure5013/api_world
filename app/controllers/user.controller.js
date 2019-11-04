@@ -147,22 +147,40 @@ exports.getOneUser = (req, res) => {
                           // Update One User
           --------------------------------------------------*/
 exports.updateOneUser = (req, res) => {
-  //Update from database
-  res.send({
-    status: 200,
-    message: 'Update one user'
-  })
+    //Update the user by id from database
+    userDbRequest.update(/*...... */)
+    .then( //if all is ok
+      user => {
+        res.status(200).json({
+          status: 200,
+          user: user
+        })
+      }).catch((e) => { //if err
+      res.status(500).json({
+        status: 500,
+        message: "Error :" + e
+      });
+    });
 }
 
 /*--------------------------------------------------
-                           // Delete One User
-          --------------------------------------------------*/
-
+            // Delete One User
+--------------------------------------------------*/
 
 exports.deleteOneUser = (req, res) => {
+  userId = req.params.userId;
   //Delete from database
-  res.send({
-    status: 200,
-    message: 'delete one user'
-  })
+    userDbRequest.destroy(userId)
+    .then( //if all is ok
+      user => {
+        res.status(200).json({
+          status: 200,
+          message : "user with id" + userId + " delete succesfful"
+        })
+      }).catch((e) => { //if err
+      res.status(500).json({
+        status: 500,
+        message: "Error :" + e
+      });
+    });
 }
