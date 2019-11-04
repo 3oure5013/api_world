@@ -127,28 +127,6 @@ exports.getOneUser = (req, res) => {
   logger.info("get user " + userId);
   //Select the user by id from database
   userDbRequest.findOne(userId)
-  .then( //if all is ok
-    user => {
-      res.status(200).json({
-        status: 200,
-        user: user
-      })
-    }).catch((e) => { //if err
-    res.status(500).json({
-      status: 500,
-      message: "Error :" + e
-    });
-  });
-
-}
-
-
-/*--------------------------------------------------
-                          // Update One User
-          --------------------------------------------------*/
-exports.updateOneUser = (req, res) => {
-    //Update the user by id from database
-    userDbRequest.update(/*...... */)
     .then( //if all is ok
       user => {
         res.status(200).json({
@@ -161,26 +139,114 @@ exports.updateOneUser = (req, res) => {
         message: "Error :" + e
       });
     });
+
 }
+
 
 /*--------------------------------------------------
-            // Delete One User
---------------------------------------------------*/
+                  // Update One User
+          --------------------------------------------------*/
+exports.updateOneUser = async (req, res) => {
 
-exports.deleteOneUser = (req, res) => {
-  userId = req.params.userId;
-  //Delete from database
-    userDbRequest.destroy(userId)
-    .then( //if all is ok
-      user => {
-        res.status(200).json({
-          status: 200,
-          message : "user with id" + userId + " delete succesfful"
-        })
-      }).catch((e) => { //if err
-      res.status(500).json({
-        status: 500,
-        message: "Error :" + e
+  //The user id
+  const userId = req.params.userId
+  console.log(userId)
+
+  const data = req.body
+  
+  console.log(req.body)
+  // user all info
+  const firstName = data.firstName
+  const lastName = data.lastName
+  const userName = data.userName
+  const birthday = data.birthday
+  const email = data.email
+  const password = data.password
+  const passwordConfirm = data.passwordConfirm
+
+  // verifyData : we use function to check if all of user data sent by user are OK
+  const dataVerificationReturn = await verifyData.verifyUserData(
+    firstName,
+    lastName,
+    userName,
+    birthday,
+    email,
+    password,
+    passwordConfirm
+  );
+  console.log(dataVerificationReturn)
+  // A dataVerificationReturn: if all we verify the image using imageUploadFunction();
+  if (dataVerificationReturn[0] == false) {
+    // call a function to verify image sent by user after check the result
+    var imageSaveState = imageUploadFunction(req, res);
+
+    //We check the imageSaveState here
+    imageSaveState.then(
+      (result) => {
+        if (result[0] == false) {
+
+          //If all is ok with our image we get the picture name and save
+          const pictureName = result[1].pictureName;
+          var passwordHashed = bcrypt.hashSync(password, 10);
+
+          /*-------------------------------------------------
+                            save in database
+                        ----USE DATABASE HERE----
+          --------------------------------------------------*/
+          //logger
+          logger.info(result);
+
+          //Update the user by id from database
+          userDbRequest.update(userId, firstName, lastName, userName, birthday, email, passwordHashed, pictureName)
+            .then( //if all is ok
+              user => {
+                res.status(200).json({
+                  status: 200,
+                  user: user
+                })
+              }).catch((e) => { //if err
+              res.status(500).json({
+                status: 500,
+                message: "Error :" + e
+              });
+            });
+        } else {
+          // Something went wrong when trying to save image get the error message to return to user
+          logger.error(result);
+          res.status(500).send(result);
+        }
       });
-    });
+
+  }else{
+
+    var error = dataVerificationReturn;
+
+    res.status(500).json({
+      status : 400,
+      message : error
+    })
+  }
 }
+
+
+  /*--------------------------------------------------
+              // Delete One User
+  --------------------------------------------------*/
+
+  exports.deleteOneUser = (req, res) => {
+    userId = req.params.userId;
+    //Delete from database
+    userDbRequest.destroy(userId)
+      .then( //if all is ok
+        user => {
+          res.status(200).json({
+            status: 200,
+            message: "user with id" + userId + " delete succesfful"
+          })
+        }).catch((e) => { //if err
+        res.status(500).json({
+          status: 500,
+          message: "Error :" + e
+        });
+      });
+  }

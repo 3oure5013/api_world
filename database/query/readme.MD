@@ -14,4 +14,4 @@ For one Model follow this instructions :
     * add your different request, you can just copy User.request.js and edit it
 
     
--
+-Import the query in your controller

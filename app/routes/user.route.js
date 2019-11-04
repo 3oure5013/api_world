@@ -28,7 +28,7 @@ exports.users  = function (baseUrl,app){
     ]);
 
     //Update one user
-    app.put(baseUrl  + "/user/:userId", [
+    app.patch(baseUrl  + "/user/:userId", [
         tokenVerification.checkToken, //add permission
         UserController.updateOneUser
     ]);

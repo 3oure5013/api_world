@@ -11,7 +11,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
-const config = require('../utils/config/config.json')
+const config = require('../utils/config/config.json');
+const methodOverride  = require("method-override");
 //defining the Express App
 const app = express();
 const baseUrl = config.base_url;
@@ -35,7 +36,6 @@ app.use(helmet() );
 // Using body parser to parse JSON bodies into JS objects
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-
 
 //Enabling CORS
 app.use(cors());
