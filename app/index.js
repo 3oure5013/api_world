@@ -20,9 +20,12 @@ console.log(baseUrl);
 /* ----------------------------------------------------------------------------------
                             Personal Modules and variables
 -----------------------------------------------------------------------------------*/
+// const migrate = require('../database/migration');
+// console.log(migrate);
  const routes = require('./routes/routes');
  const logger = require('../utils/middlewares/logMiddleware').logMiddleware;
 //  const connexion = require('../database/query/User.request').insert('TOURE', "SOULEYMANE");
+
 /* ----------------------------------------------------------------------------------
                                 MIDDLEWARE
 -----------------------------------------------------------------------------------*/

@@ -5,7 +5,9 @@ const bcrypt = require('bcrypt');
 // Personal modules
 const message = require('../../utils/config/messages').message;
 const verifyData = require('../../utils/functions/verifyUserData');
-const { imageUploadFunction } = require('../../utils/functions/uploadImage');
+const {
+  imageUploadFunction
+} = require('../../utils/functions/uploadImage');
 const logger = require('../../utils/middlewares/logMiddleware').logMiddleware;
 const userDbRequest = require('../../database/query/User.request')
 
@@ -60,28 +62,28 @@ exports.addOneUser = async (req, res, next) => {
 
           //Save this data in database
           userDbRequest.insert(
-             firstName,lastName,userName,birthday,email,passwordHashed,pictureName
+            firstName, lastName, userName, birthday, email, passwordHashed, pictureName
           ).then( //if all is ok
             user => {
-            console.log("User's auto-generated ID:", user.id);
-            res.status(200).json({
-              status: 200,
-              firstName: firstName,
-              lastName: lastName,
-              userName: userName,
-              birthday: birthday,
-              email: email,
-              password: passwordHashed,
-              pictureName: pictureName,
-              message: message.success.save,
-              date : "new Date()"
-            })
-        }).catch((e)=>{ //if err
-          res.status(500).json({
-            status: 500,
-            message : "Error :" + e 
+              console.log("User's auto-generated ID:", user.id);
+              res.status(200).json({
+                status: 200,
+                firstName: firstName,
+                lastName: lastName,
+                userName: userName,
+                birthday: birthday,
+                email: email,
+                password: passwordHashed,
+                pictureName: pictureName,
+                message: message.success.save,
+                date: "new Date()"
+              })
+            }).catch((e) => { //if err
+            res.status(500).json({
+              status: 500,
+              message: "Error :" + e
+            });
           });
-        });
         } else {
           // Something went wrong when trying to save image get the error message to return to user
           logger.error(result);
@@ -91,57 +93,76 @@ exports.addOneUser = async (req, res, next) => {
   }
 }
 
-          /*--------------------------------------------------
-                           // Get All users
-          --------------------------------------------------*/
-  
-  exports.getAllUser = (req, res) => {
-    //logger
-    logger.info("get All user with success");
-    
-    res.send({
-      status: 200,
-      message: 'All users'
-    })
-  }
+/*--------------------------------------------------
+                 // Get All users
+--------------------------------------------------*/
 
-            /*--------------------------------------------------
+exports.getAllUser = (req, res) => {
+  //logger
+  //Select All user
+  userDbRequest.findAll().then( //if all is ok
+    users => {
+      logger.info("get All user with success");
+      res.status(200).json({
+        status: 200,
+        users: users
+      })
+    }).catch((e) => { //if err
+    res.status(500).json({
+      status: 500,
+      message: "Error :" + e
+    });
+  });
+
+}
+
+/*--------------------------------------------------
                             // Get One User
           --------------------------------------------------*/
-  
-  exports.getOneUser = (req, res) =>  { 
-    // id of user to return (Here we can get user by using his username or his id or his email make SQL request whom can take one of all this params)
-    const userId = req.params.userId
-    //logger
-    logger.info("get user " + userId);
-    //Select the user by id from database
-    res.send({
-      status: 200,
-      message: ' user number ' + userId
-    })
-  }
+
+exports.getOneUser = (req, res) => {
+  // id of user to return (Here we can get user by using his username or his id or his email make SQL request whom can take one of all this params)
+  const userId = req.params.userId
+  //logger
+  logger.info("get user " + userId);
+  //Select the user by id from database
+  userDbRequest.findOne(userId)
+  .then( //if all is ok
+    user => {
+      res.status(200).json({
+        status: 200,
+        user: user
+      })
+    }).catch((e) => { //if err
+    res.status(500).json({
+      status: 500,
+      message: "Error :" + e
+    });
+  });
+
+}
 
 
-            /*--------------------------------------------------
+/*--------------------------------------------------
                           // Update One User
           --------------------------------------------------*/
-  exports.updateOneUser = (req, res) => {
-    //Update from database
-    res.send({
-      status: 200,
-      message: 'Update one user'
-    })
-  }
+exports.updateOneUser = (req, res) => {
+  //Update from database
+  res.send({
+    status: 200,
+    message: 'Update one user'
+  })
+}
 
-            /*--------------------------------------------------
+/*--------------------------------------------------
                            // Delete One User
           --------------------------------------------------*/
 
-  
-  exports.deleteOneUser = (req, res) => {
-    //Delete from database
-    res.send({
-      status: 200,
-      message: 'delete one user'
-    })
-  }
+
+exports.deleteOneUser = (req, res) => {
+  //Delete from database
+  res.send({
+    status: 200,
+    message: 'delete one user'
+  })
+}

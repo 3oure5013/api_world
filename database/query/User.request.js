@@ -1,92 +1,74 @@
 const connexion = require('../connexiondb'); //connexion to database
-const { User } = require('../../app/models/User'); //Users models
+const {
+  User
+} = require('../../app/models/User'); //Users models
 
-
+/*-------------------------------------------------------
+                    Create table
+-------------------------------------------------------*/
 // Note: using `force: true` will drop the table if it already exists
+const migrate = require('../migration');
 
+
+/*-------------------------------------------------------
+                        Request
+-------------------------------------------------------*/
 // Find all users
-const findAll = ()=>{
-    User.findAll().then(users => {
-    console.log("All users:", JSON.stringify(users, null, 4));
-  });
-}
-// Find all users
-const findOne= (id)=>{
-  User.findOne({ 
-      where: {
-      id : id
-    }
-  })
-  .then
-  (user => {
-    
-  console.log("All users:", JSON.stringify(user, null, 4));
-  return user;
-});
-
+const findAll = () => {
+  return User.findAll();
 }
 
-
-// Create a new user
-const insert = (firstName,lastName,userName,birthday,email,passwordHashed,pictureName)=>{
-  // Note: using `force: true` will drop the table if it already exists
-// User.sync({ force: true }).then(() => {
-//   // Now the `users` table in the database corresponds to the model definition
-//   return User.create({ 
-//     firstName: firstName ,
-//     lastName: lastName ,
-//     userName: userName,
-//     birthday: birthday,
-//     email: email,
-//     password: passwordHashed,
-//     pictureName: pictureName,
-//   });
-// });  
-  return User.create(
-    { 
-      firstName: firstName ,
-      lastName: lastName ,
-      userName: userName,
-      birthday: birthday,
-      email: email,
-      password: passwordHashed,
-      pictureName: pictureName,
-    });
-}
-
-
-// Delete everyone with his id
-const destroy = (id)=>{
-    User.destroy({
-    where: {
-      id: id
-    }
-  }).then(() => {
-    console.log("Done");
-    return {
-      status : 200,
-      id : id,
-      message : "successful delete",
-    };
-  });
-}
-// Change everyone without a last name to "Doe"
-const update = (id,lastName)=>{
-    User.update(
-      {
-       lastName: lastName,
-      }, 
-      {
+// Find one user with id
+const findOne = (id) => {
+  return User.findOne({
       where: {
         id: id
       }
-  }).then(() => {
-    console.log("Done");
+    });
+}
+
+// Create a new user
+const insert = (firstName, lastName, userName, birthday, email, passwordHashed, pictureName) => {
+  return User.create({
+    firstName: firstName,
+    lastName: lastName,
+    userName: userName,
+    birthday: birthday,
+    email: email,
+    password: passwordHashed,
+    pictureName: pictureName,
   });
 }
 
-module.exports={
+// Delete everyone with his id
+const destroy = (id) => {
+  return User.destroy({
+    where: {
+      id: id
+    }
+  });
+}
+
+// Change everyone without a last name to "Doe"
+const update = (id, firstName, lastName, userName, birthday, email, passwordHashed, pictureName) => {
+  return User.update({
+    firstName: firstName,
+    lastName: lastName,
+    userName: userName,
+    birthday: birthday,
+    email: email,
+    password: passwordHashed,
+    pictureName: pictureName,
+  }, {
+    where: {
+      id: id
+    }
+  });
+}
+
+module.exports = {
   insert,
+  findOne,
   findAll,
   update,
   destroy
