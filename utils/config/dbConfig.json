@@ -1,0 +1,23 @@
+{
+    "mysql" :
+    {
+        "host"  : "localhost",
+        "user"  : "root",
+        "password"  : "",
+        "database"  : "nodejs",
+        "debug"    :  true
+
+    },
+    "mongodb":{
+
+    },
+    "mariadb" : {
+
+
+    },
+    "postgree" : {
+
+
+    }
+
+}

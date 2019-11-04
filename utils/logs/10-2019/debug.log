@@ -1,0 +1,108 @@
+- Date : 2019-11-01T21:05:03.233Z  --  level : [33mwarn[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:06:05.693Z  --  level : [33mwarn[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:06:55.183Z  --  level : [33mwarn[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:07:25.485Z  --  level : [32minfo[39m -- message : {"host":"localhost:8080","connection":"keep-alive","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36","dnt":"1","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","accept-encoding":"gzip, deflate, br","accept-language":"fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7","cookie":"_ga=GA1.1.214656947.1554302577"} 
+- Date : 2019-11-01T21:07:25.488Z  --  level : [31merror[39m -- message : Error token invalid {} 
+- Date : 2019-11-01T21:08:00.152Z  --  level : [33mwarn[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:08:03.804Z  --  level : [33mwarn[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:10:38.717Z  --  level : [33mwarn[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:10:47.939Z  --  level : [33mwarn[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:10:52.979Z  --  level : [33mwarn[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:10:58.496Z  --  level : [33mwarn[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:12:47.938Z  --  level : [33mwarn[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:13:49.202Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:16:57.564Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:17:08.440Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:17:10.813Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:17:45.406Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:19:18.238Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:19:38.614Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:19:55.605Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:20:03.828Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:20:34.408Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:20:41.396Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:20:43.661Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:23:22.026Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:23:39.147Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:24:11.807Z  --  level : [32minfo[39m -- message :  
+- Date : 2019-11-01T21:24:24.726Z  --  level : [32minfo[39m -- message : Added user routes acceded 
+- Date : 2019-11-01T21:24:56.796Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:25:04.906Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:25:12.225Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:25:17.459Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:27:12.633Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:27:24.864Z  --  level : [32minfo[39m -- message : {"host":"localhost:8080","connection":"keep-alive","content-length":"537381","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36","cache-control":"no-cache","origin":"chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop","content-type":"multipart/form-data; boundary=----WebKitFormBoundarye4Y3HnZaZWVZgUr1","authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRvdXJlNTAxMyIsImlhdCI6MTU3MTA1OTUxOCwiZXhwIjoxNTcxMDYzMTE4fQ.HY0oBKo__1r7hVfegRofI4Rro1G18AYAGPEPuewUb84","postman-token":"9f2cc44f-4dc9-3bb7-c981-840bc1bcdde6","accept":"*/*","accept-encoding":"gzip, deflate, br","accept-language":"fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7"} 
+- Date : 2019-11-01T21:28:24.218Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:28:43.389Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:29:07.509Z  --  level : [32minfo[39m -- message : false,[object Object] 
+- Date : 2019-11-01T21:29:34.058Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:29:48.730Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:30:28.458Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:31:12.987Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:31:58.208Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:32:04.338Z  --  level : [32minfo[39m -- message : false,[object Object] 
+- Date : 2019-11-01T21:33:25.186Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:33:42.100Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:33:46.232Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:34:32.665Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:35:12.679Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:35:19.567Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:37:56.385Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:38:01.585Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:38:59.942Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:41:38.543Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:43:04.876Z  --  level : [32minfo[39m -- message : false,[object Object] 
+- Date : 2019-11-01T21:44:22.301Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:44:41.469Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:45:48.109Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:46:53.582Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:47:17.219Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:47:35.572Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:50:02.622Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:50:20.843Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:51:06.702Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:54:33.976Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:56:23.221Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:56:43.932Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:56:47.315Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:58:43.197Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:59:46.910Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T21:59:54.116Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T22:00:07.068Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T22:00:39.137Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T22:01:35.864Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T22:01:40.663Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T22:01:50.691Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T22:02:09.152Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T22:04:16.878Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T22:04:22.294Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-01T22:06:12.509Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T00:04:07.933Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T01:46:39.823Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T09:59:25.563Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T10:30:31.406Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T10:30:59.310Z  --  level : [32minfo[39m -- message : {"host":"localhost:8080","connection":"keep-alive","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36","dnt":"1","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","accept-encoding":"gzip, deflate, br","accept-language":"fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7","cookie":"_ga=GA1.1.214656947.1554302577"} 
+- Date : 2019-11-04T10:30:59.322Z  --  level : [31merror[39m -- message : Error token invalid {} 
+- Date : 2019-11-04T10:33:12.808Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T10:33:19.673Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T10:33:30.784Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T10:33:42.919Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T10:33:49.253Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T10:33:56.872Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T10:34:01.472Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T10:35:25.906Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T10:35:37.852Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T10:35:45.017Z  --  level : [32minfo[39m -- message : {"host":"localhost:8080","connection":"keep-alive","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36","dnt":"1","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","accept-encoding":"gzip, deflate, br","accept-language":"fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7","cookie":"_ga=GA1.1.214656947.1554302577"} 
+- Date : 2019-11-04T10:35:45.019Z  --  level : [31merror[39m -- message : Error token invalid {} 
+- Date : 2019-11-04T10:42:31.099Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T10:42:46.955Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T10:42:52.969Z  --  level : [32minfo[39m -- message : {"host":"localhost:8080","connection":"keep-alive","cache-control":"max-age=0","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36","dnt":"1","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","accept-encoding":"gzip, deflate, br","accept-language":"fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7","cookie":"_ga=GA1.1.214656947.1554302577","if-none-match":"W/\"3e-6mGodKE0BH2ol/ZZPioNo379BaI\""} 
+- Date : 2019-11-04T10:42:52.972Z  --  level : [31merror[39m -- message : Error token invalid {} 
+- Date : 2019-11-04T10:42:53.315Z  --  level : [32minfo[39m -- message : {"host":"localhost:8080","connection":"keep-alive","cache-control":"max-age=0","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36","dnt":"1","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","accept-encoding":"gzip, deflate, br","accept-language":"fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7","cookie":"_ga=GA1.1.214656947.1554302577","if-none-match":"W/\"3e-6mGodKE0BH2ol/ZZPioNo379BaI\""} 
+- Date : 2019-11-04T10:42:53.317Z  --  level : [31merror[39m -- message : Error token invalid {} 
+- Date : 2019-11-04T10:43:24.602Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
+- Date : 2019-11-04T10:43:31.982Z  --  level : [32minfo[39m -- message : {"host":"localhost:8080","connection":"keep-alive","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36","dnt":"1","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","accept-encoding":"gzip, deflate, br","accept-language":"fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7","cookie":"_ga=GA1.1.214656947.1554302577","if-none-match":"W/\"3e-6mGodKE0BH2ol/ZZPioNo379BaI\""} 
+- Date : 2019-11-04T10:43:31.985Z  --  level : [31merror[39m -- message : Error token invalid {} 
+- Date : 2019-11-04T10:43:38.099Z  --  level : [32minfo[39m -- message : {"host":"localhost:8080","connection":"keep-alive","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36","dnt":"1","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","accept-encoding":"gzip, deflate, br","accept-language":"fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7","cookie":"_ga=GA1.1.214656947.1554302577","if-none-match":"W/\"3e-6mGodKE0BH2ol/ZZPioNo379BaI\""} 
+- Date : 2019-11-04T10:43:38.101Z  --  level : [31merror[39m -- message : Error token invalid {} 
+- Date : 2019-11-04T10:46:39.850Z  --  level : [32minfo[39m -- message : Application démarré sur localhost:8080 
