@@ -13,7 +13,37 @@ const User = sequelize.define('user', {
     lastName: {
       type: Sequelize.STRING
       // allowNull defaults to true
-    }
+    },
+    userName: {
+      type: Sequelize.STRING
+      // allowNull defaults to true
+    },
+    birthday: {
+      type: Sequelize.STRING
+      // allowNull defaults to true
+    },
+    email: {
+      type: Sequelize.STRING
+      // allowNull defaults to true
+    },
+    password: {
+      type: Sequelize.STRING
+      // allowNull defaults to true
+    },
+    pictureName: {
+      type: Sequelize.STRING
+      // allowNull defaults to true
+    },
+    createdAt: {
+      allowNull: false,
+      type: 'TIMESTAMP',
+      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+    },
+    updatedAt: {
+      allowNull: false,
+      type: 'TIMESTAMP',
+      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+    },
   }, {
     // options
   })

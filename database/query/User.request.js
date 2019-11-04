@@ -28,15 +28,30 @@ const findOne= (id)=>{
 
 
 // Create a new user
-const insert = (firstName,lastName)=>{
-    User.create(
+const insert = (firstName,lastName,userName,birthday,email,passwordHashed,pictureName)=>{
+  // Note: using `force: true` will drop the table if it already exists
+// User.sync({ force: true }).then(() => {
+//   // Now the `users` table in the database corresponds to the model definition
+//   return User.create({ 
+//     firstName: firstName ,
+//     lastName: lastName ,
+//     userName: userName,
+//     birthday: birthday,
+//     email: email,
+//     password: passwordHashed,
+//     pictureName: pictureName,
+//   });
+// });  
+  return User.create(
     { 
       firstName: firstName ,
-      lastName: lastName 
-    }).then(
-      user => {
-      console.log("User's auto-generated ID:", user.id);
-  });
+      lastName: lastName ,
+      userName: userName,
+      birthday: birthday,
+      email: email,
+      password: passwordHashed,
+      pictureName: pictureName,
+    });
 }
 
 

@@ -7,6 +7,7 @@ const message = require('../../utils/config/messages').message;
 const verifyData = require('../../utils/functions/verifyUserData');
 const { imageUploadFunction } = require('../../utils/functions/uploadImage');
 const logger = require('../../utils/middlewares/logMiddleware').logMiddleware;
+const userDbRequest = require('../../database/query/User.request')
 
 
 // Add(Create) One User
@@ -14,9 +15,9 @@ exports.addOneUser = async (req, res, next) => {
 
   const data = req.body
   // user all info
-  const name = data.name
-  const surname = data.surname
-  const username = data.username
+  const firstName = data.firstName
+  const lastName = data.lastName
+  const userName = data.userName
   const birthday = data.birthday
   const email = data.email
   const password = data.password
@@ -24,9 +25,9 @@ exports.addOneUser = async (req, res, next) => {
 
   // verifyData : we use function to check if all of user data sent by user are OK
   const dataVerificationReturn = await verifyData.verifyUserData(
-    name,
-    surname,
-    username,
+    firstName,
+    lastName,
+    userName,
     birthday,
     email,
     password,
@@ -58,19 +59,29 @@ exports.addOneUser = async (req, res, next) => {
           logger.info(result);
 
           //Save this data in database
-          res.status(200).json({
-            status: 200,
-            name: name,
-            surname: surname,
-            username: username,
-            birthday: birthday,
-            email: email,
-            password: passwordHashed,
-            pictureName: pictureName,
-            message: message.success.save,
-            date : "new Date()"
-          })
-
+          userDbRequest.insert(
+             firstName,lastName,userName,birthday,email,passwordHashed,pictureName
+          ).then( //if all is ok
+            user => {
+            console.log("User's auto-generated ID:", user.id);
+            res.status(200).json({
+              status: 200,
+              firstName: firstName,
+              lastName: lastName,
+              userName: userName,
+              birthday: birthday,
+              email: email,
+              password: passwordHashed,
+              pictureName: pictureName,
+              message: message.success.save,
+              date : "new Date()"
+            })
+        }).catch((e)=>{ //if err
+          res.status(500).json({
+            status: 500,
+            message : "Error :" + e 
+          });
+        });
         } else {
           // Something went wrong when trying to save image get the error message to return to user
           logger.error(result);
