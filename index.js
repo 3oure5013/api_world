@@ -11,22 +11,12 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
-const config = require('../utils/config/config.json');
+const config = require('./utils/config/config.json');
 const methodOverride  = require("method-override");
 //defining the Express App
 const app = express();
 const baseUrl = config.base_url;
 console.log(baseUrl);
-
-/* ----------------------------------------------------------------------------------
-                            Personal Modules and variables
------------------------------------------------------------------------------------*/
-// const migrate = require('../database/migration');
-// console.log(migrate);
- const routes = require('./routes/routes');
- const logger = require('../utils/middlewares/logMiddleware').logMiddleware;
-//  const connexion = require('../database/query/User.request').insert('TOURE', "SOULEYMANE");
-
 /* ----------------------------------------------------------------------------------
                                 MIDDLEWARE
 -----------------------------------------------------------------------------------*/
@@ -34,8 +24,10 @@ console.log(baseUrl);
 app.use(helmet() );
 
 // Using body parser to parse JSON bodies into JS objects
-app.use(bodyParser.json());
+
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 //Enabling CORS
 app.use(cors());
@@ -46,12 +38,23 @@ app.use(morgan('combined'));
 //Static file 
 app.use(express.static('../src/public'));
 
+
+
+
+/* ----------------------------------------------------------------------------------
+                            Personal Modules and variables
+-----------------------------------------------------------------------------------*/
+// const migrate = require('../database/migration');
+// console.log(migrate);
+ const routes = require('./src/routes/routes');
+ const logger = require('./app/middlewares/logMiddleware').logMiddleware;
+
+
 /* ----------------------------------------------------------------------------------
                                     ROUTES
 -----------------------------------------------------------------------------------*/
-// defining an endpoint to return all ads
-// routes.users();
 
+//Root route
 app.get("/",(req,res)=>{
     console.log("----------------------------------------------------")
     console.log("Bienvenue sur api v1")
@@ -59,10 +62,11 @@ app.get("/",(req,res)=>{
     res.send(config.hostname + ":" + config.port + config.baseUrl)
 }),
 
-//Route For User
+//Other routes(user,...)
 routes.configRoutes(baseUrl, app);
 
-//udefined routes
+
+//undefined routes (404)
 app.use("/*", (req,res)=>{
     res.status(500).json(
         {
@@ -72,6 +76,8 @@ app.use("/*", (req,res)=>{
         }
     )
 });
+
+
 /* ----------------------------------------------------------------------------------
                                 SERVER LISTENING
 -----------------------------------------------------------------------------------*/

@@ -3,9 +3,9 @@ const jwt = require('jsonwebtoken');
 
 //Personal modules
 // const login = require('../../src/controllers/signin.controller');
-const message = require('../config/messages.json').message;
-const config = require('../config/config.json');
-const logger = require('../../utils/middlewares/logMiddleware').logMiddleware;
+const message = require('../../utils/config/messages.json').message;
+const config = require('../../utils/config/config.json');
+const logger = require('./logMiddleware').logMiddleware;
 
 let checkToken = (req, res, next)=>{
     console.log(req.headers);

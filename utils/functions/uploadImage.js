@@ -2,7 +2,7 @@ const path = require('path')
 
 // Personal moduls
 const message = require('../../utils/config/messages').message
-const resizeMiddleWare = require('../../utils/middlewares/resizeMiddleware')
+const resizeMiddleWare = require('../../app/middlewares/resizeMiddleware')
 
 exports.imageUploadFunction = async (req, res) => {
   var error = true

@@ -8,7 +8,7 @@ const verifyData = require('../../utils/functions/verifyUserData');
 const {
   imageUploadFunction
 } = require('../../utils/functions/uploadImage');
-const logger = require('../../utils/middlewares/logMiddleware').logMiddleware;
+const logger = require('../middlewares/logMiddleware').logMiddleware;
 const userDbRequest = require('../../database/query/User.request')
 
 
@@ -146,14 +146,14 @@ exports.getOneUser = (req, res) => {
 /*--------------------------------------------------
                   // Update One User
           --------------------------------------------------*/
-exports.updateOneUser = async (req, res) => {
+exports.updateOneUser = async (req, res, next) => {
 
   //The user id
   const userId = req.params.userId
   console.log(userId)
 
   const data = req.body
-  
+
   console.log(req.body)
   // user all info
   const firstName = data.firstName
@@ -217,36 +217,64 @@ exports.updateOneUser = async (req, res) => {
         }
       });
 
-  }else{
+  } else {
 
     var error = dataVerificationReturn;
 
     res.status(500).json({
-      status : 400,
-      message : error
+      status: 400,
+      message: error
     })
   }
 }
 
 
-  /*--------------------------------------------------
-              // Delete One User
-  --------------------------------------------------*/
+/*--------------------------------------------------
+            // Delete One User
+--------------------------------------------------*/
 
-  exports.deleteOneUser = (req, res) => {
-    userId = req.params.userId;
-    //Delete from database
-    userDbRequest.destroy(userId)
-      .then( //if all is ok
-        user => {
-          res.status(200).json({
-            status: 200,
-            message: "user with id" + userId + " delete succesfful"
-          })
-        }).catch((e) => { //if err
-        res.status(500).json({
-          status: 500,
-          message: "Error :" + e
-        });
+exports.deleteOneUser = (req, res) => {
+  userId = req.params.userId;
+  //We check if the user exist if yes we delete else we return unexisting message
+  userDbRequest.findOne(userId)
+    .then( //if all is ok
+      user => {
+        //Delete from database
+        userDbRequest.destroy(userId)
+          .then( //if all is ok
+            user => {
+              if (user) {
+                //Delete from database
+                userDbRequest.destroy(userId)
+                  .then( //if all is ok
+                    user => {
+                      res.status(200).json({
+                        status: 200,
+                        message: "id  = " + userId + " ... " + message.success.delete
+                      })
+                    }).catch((e) => { //if err
+                    res.status(500).json({
+                      status: 500,
+                      message: "Error :" + e
+                    });
+                  });
+              } else {
+                res.status(200).json({
+                  status: 404,
+                  message: "id  = " + userId + " ... " + message.error.user_not_found
+                })
+              }
+
+            }).catch((e) => { //if err
+            res.status(500).json({
+              status: 500,
+              message: "Error :" + e
+            });
+          });
+      }).catch((e) => { //if err
+      res.status(500).json({
+        status: 500,
+        message: "Error :" + e
       });
-  }
+    });
+}

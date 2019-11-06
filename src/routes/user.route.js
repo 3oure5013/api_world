@@ -1,8 +1,8 @@
 
 //Imports
-const UserController = require('../controllers/user.controller')
-const uploadPictureMiddleware = require('../../utils/middlewares/uploadPictureMiddleware');
-const tokenVerification  = require('../../utils/middlewares/tokenVerificationMiddleware');
+const UserController = require('../../app/controllers/user.controller')
+const uploadPictureMiddleware = require('../../app/middlewares/uploadPictureMiddleware');
+const tokenVerification  = require('../../app/middlewares/tokenVerificationMiddleware');
 
 
 
@@ -28,7 +28,7 @@ exports.users  = function (baseUrl,app){
     ]);
 
     //Update one user
-    app.patch(baseUrl  + "/user/:userId", [
+    app.put(baseUrl  + "/user/:userId", [
         tokenVerification.checkToken, //add permission
         UserController.updateOneUser
     ]);

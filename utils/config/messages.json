@@ -2,7 +2,7 @@
     "message" : {
         "warning" : {
             "delete" : "Attention vous allez supprimer",
-            "insert" : "Attension vous allez inserer"
+            "insert" : "Attension vous allez insérer"
         },
         "error":{
             "data_not_correct" : "données entrées incorect, veuill entrer une valeur correct!",
@@ -20,7 +20,8 @@
             "login_failed" : "connection echoué",
             "different_password": "Les deux mots de passes ne correspondent pas",
             "file_unsave" :  "Fichier non enregistrer, veuillez rentrer un fichier correct",
-            "not_login" : "Vous n'êtes pas connecter"
+            "not_login" : "Vous n'êtes pas connecter",
+            "user_not_found" : "l'utilisateur avec ce identitifiant n'existe pas"
 
           },
           "success" : {

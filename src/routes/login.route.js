@@ -1,6 +1,6 @@
 'use strict'
 //Modules import
-const tokenGeneratorController = require('../controllers/token.generator.controller');
+const tokenGeneratorController = require('../../app/controllers/token.generator.controller');
 
 //Instance of token generator 
 const tokenGeneratorInstance = new tokenGeneratorController();

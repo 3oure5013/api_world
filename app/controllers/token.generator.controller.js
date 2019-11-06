@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const config = require('../../utils/config/config.json');
-const verifyTokenMiddleware = require('../../utils/middlewares/tokenVerificationMiddleware');
+const verifyTokenMiddleware = require('../middlewares/tokenVerificationMiddleware');
 const signinController = require('./signin.controller');
 const message = require('../../utils/config/messages.json').message;
 var loginState;

@@ -5,9 +5,9 @@ const {
 
 /*-------------------------------------------------------
                     Create table
+      uncomment this line under to create table
 -------------------------------------------------------*/
-// Note: using `force: true` will drop the table if it already exists
-const migrate = require('../migration');
+//const migrate = require('../migration');
 
 
 /*-------------------------------------------------------
