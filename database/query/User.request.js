@@ -7,7 +7,7 @@ const {
                     Create table
       uncomment this line under to create table
 -------------------------------------------------------*/
-//const migrate = require('../migration');
+// const migrate = require('../migration');
 
 
 /*-------------------------------------------------------

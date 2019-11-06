@@ -21,7 +21,7 @@ exports.verifyUserData = (
   passwordConfirm
 ) => {
   // We declare variable error with false, when an error occured we put to true
-  console.log('je verifie')
+  //console.log('je verifie')
   var error = false
   if (
     firstName,

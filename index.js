@@ -12,11 +12,9 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const config = require('./utils/config/config.json');
-const methodOverride  = require("method-override");
 //defining the Express App
 const app = express();
 const baseUrl = config.base_url;
-console.log(baseUrl);
 /* ----------------------------------------------------------------------------------
                                 MIDDLEWARE
 -----------------------------------------------------------------------------------*/
@@ -26,7 +24,6 @@ app.use(helmet() );
 // Using body parser to parse JSON bodies into JS objects
 
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(bodyParser.json());
 app.use(bodyParser.json());
 
 //Enabling CORS

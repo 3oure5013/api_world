@@ -7,7 +7,7 @@ const { User } = require('../app/models/User'); //Users models
  
  
  // Note: using `force: true` will drop the table if it already exists
-User.sync(/*{ force: true }*/).then(() => {
+exports.userMigration = User.sync(/*{ force: true }*/).then(() => {
   // Now the `users` table in the database corresponds to the model definition
   console.log("User table create with success");
   return {

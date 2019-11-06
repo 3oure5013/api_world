@@ -58,7 +58,7 @@ exports.addOneUser = async (req, res, next) => {
                         ----USE DATABASE HERE----
           --------------------------------------------------*/
           //logger
-          logger.info(result);
+          logger.info(JSON.stringify(result));
 
           //Save this data in database
           userDbRequest.insert(
@@ -86,7 +86,7 @@ exports.addOneUser = async (req, res, next) => {
           });
         } else {
           // Something went wrong when trying to save image get the error message to return to user
-          logger.error(result);
+          logger.error(JSON.stringify(result));
           res.send(result)
         }
       });
@@ -151,10 +151,13 @@ exports.updateOneUser = async (req, res, next) => {
   //The user id
   const userId = req.params.userId
   console.log(userId)
+  console.log("-------------------------------REQ--------------------")
+  console.log(req)
 
   const data = req.body
 
-  console.log(req.body)
+  console.log("----------req.body----------")
+  console.log(data)
   // user all info
   const firstName = data.firstName
   const lastName = data.lastName
@@ -174,6 +177,7 @@ exports.updateOneUser = async (req, res, next) => {
     password,
     passwordConfirm
   );
+  console.log( "------------ verification return ------------" )
   console.log(dataVerificationReturn)
   // A dataVerificationReturn: if all we verify the image using imageUploadFunction();
   if (dataVerificationReturn[0] == false) {
@@ -194,7 +198,7 @@ exports.updateOneUser = async (req, res, next) => {
                         ----USE DATABASE HERE----
           --------------------------------------------------*/
           //logger
-          logger.info(result);
+          logger.info(JSON.stringify(result));
 
           //Update the user by id from database
           userDbRequest.update(userId, firstName, lastName, userName, birthday, email, passwordHashed, pictureName)
@@ -207,12 +211,12 @@ exports.updateOneUser = async (req, res, next) => {
               }).catch((e) => { //if err
               res.status(500).json({
                 status: 500,
-                message: "Error :" + e
+                message: "Error :" + JSON.stringify(e)
               });
             });
         } else {
           // Something went wrong when trying to save image get the error message to return to user
-          logger.error(result);
+          logger.error(JSON.stringify(result));
           res.status(500).send(result);
         }
       });
