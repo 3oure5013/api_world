@@ -1,4 +1,4 @@
-const {sequelize, Sequelize} = require('./db')
+const {sequelize} = require('./db')
 
     /*----------------------------------------------------------
                            //connection test
@@ -13,5 +13,4 @@ sequelize
   console.error('Unable to connect to the database:', err);
 });
 
-exports.Sequelize;
 

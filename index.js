@@ -7,6 +7,7 @@
                                 Nodejs Modules
 -----------------------------------------------------------------------------------*/
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -14,7 +15,11 @@ const morgan = require('morgan');
 const config = require('./utils/config/config.json');
 //defining the Express App
 const app = express();
+
+//Variables
 const baseUrl = config.base_url;
+const publicPath = path.join(__dirname, config.public_file);
+
 /* ----------------------------------------------------------------------------------
                                 MIDDLEWARE
 -----------------------------------------------------------------------------------*/
@@ -33,7 +38,7 @@ app.use(cors());
 app.use(morgan('combined'));
 
 //Static file 
-app.use(express.static('../src/public'));
+app.use(express.static(publicPath));
 
 
 
@@ -53,10 +58,12 @@ app.use(express.static('../src/public'));
 
 //Root route
 app.get("/",(req,res)=>{
-    console.log("----------------------------------------------------")
-    console.log("Bienvenue sur api v1")
-    console.log("----------------------------------------------------")
-    res.send(config.hostname + ":" + config.port + config.baseUrl)
+
+    var welcome = "----------------------------------------------------------<br>";
+     welcome +=   " -- Bienvenue sur api v1, ton baseUrl est "+  baseUrl +"--<br>";
+     welcome +=   "----------------------------------------------------------<br>";
+     console.log("welcome")
+    res.status(200).send(welcome)
 }),
 
 //Other routes(user,...)

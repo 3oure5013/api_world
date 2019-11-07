@@ -4,9 +4,10 @@ const path = require('path')
 const message = require('../../utils/config/messages').message
 const resizeMiddleWare = require('../../app/middlewares/resizeMiddleware')
 
-exports.imageUploadFunction = async (req, res) => {
-  var error = true
-  const imagePath = path.join(__dirname, '../../src/public/profilPicture')
+exports.imageUploadFunction = async (req, res, ImagefolderName) => {
+  var error = true;
+  var imageSaveFolderName = '../../src/public/' + ImagefolderName;
+  const imagePath = path.join(__dirname, imageSaveFolderName);
   try {
     const fileUpload = new resizeMiddleWare(imagePath)
     //   console.log('*****************************************')

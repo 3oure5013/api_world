@@ -11,6 +11,10 @@ const {
 const logger = require('../middlewares/logMiddleware').logMiddleware;
 const userDbRequest = require('../../database/query/User.request')
 
+//Variables
+const imageFolderName = "profil_picture";
+const date = new Date();
+
 
 // Add(Create) One User
 exports.addOneUser = async (req, res, next) => {
@@ -42,7 +46,7 @@ exports.addOneUser = async (req, res, next) => {
   if (dataVerificationReturn[0] == false) {
 
     // call a function to verify image sent by user after check the result
-    var imageSaveState = imageUploadFunction(req, res);
+    var imageSaveState = imageUploadFunction(req, res, imageFolderName);
 
     //We check the imageSaveState here
     imageSaveState.then(
@@ -50,7 +54,7 @@ exports.addOneUser = async (req, res, next) => {
         if (result[0] == false) {
 
           //If all is ok with our image we get the picture name and save
-          const pictureName = result[1].pictureName;
+          const pictureName = imageFolderName + '/' +  result[1].pictureName;
           var passwordHashed = bcrypt.hashSync(password, 10);
 
           /*-------------------------------------------------
@@ -76,7 +80,7 @@ exports.addOneUser = async (req, res, next) => {
                 password: passwordHashed,
                 pictureName: pictureName,
                 message: message.success.save,
-                date: "new Date()"
+                // date: date
               })
             }).catch((e) => { //if err
             res.status(500).json({
@@ -89,6 +93,8 @@ exports.addOneUser = async (req, res, next) => {
           logger.error(JSON.stringify(result));
           res.send(result)
         }
+      }).catch((e)=>{
+        res.status(500).send("Error" + JSON.stringify(e));
       });
   }
 }
@@ -182,7 +188,7 @@ exports.updateOneUser = async (req, res, next) => {
   // A dataVerificationReturn: if all we verify the image using imageUploadFunction();
   if (dataVerificationReturn[0] == false) {
     // call a function to verify image sent by user after check the result
-    var imageSaveState = imageUploadFunction(req, res);
+    var imageSaveState = imageUploadFunction(req, res,imageFolderName);
 
     //We check the imageSaveState here
     imageSaveState.then(
@@ -190,7 +196,7 @@ exports.updateOneUser = async (req, res, next) => {
         if (result[0] == false) {
 
           //If all is ok with our image we get the picture name and save
-          const pictureName = result[1].pictureName;
+          const pictureName = imageFolderName + '/'+ result[1].pictureName;
           var passwordHashed = bcrypt.hashSync(password, 10);
 
           /*-------------------------------------------------
@@ -219,13 +225,14 @@ exports.updateOneUser = async (req, res, next) => {
           logger.error(JSON.stringify(result));
           res.status(500).send(result);
         }
+      }).catch((e)=>{
+        res.status(500).send("Error" + JSON.stringify(e));
       });
 
   } else {
 
     var error = dataVerificationReturn;
-
-    res.status(500).json({
+    res.status(400).json({
       status: 400,
       message: error
     })

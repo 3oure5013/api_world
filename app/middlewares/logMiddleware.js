@@ -8,14 +8,18 @@ const date = new Date();
             For changing the save time change dateOfLog to dateOfLogDaily or dateOfLogMonthly or dateOfLogYearly
 //-------------------------------------------------------------------------------------------------------------------------------------*/
 
+const day =date.getUTCDate() ;
+const month = (date.getUTCMonth()+1);
+const year = date.getUTCFullYear();
+
 //Create one folder per day
-var dateOfLogDaily = date.getUTCDate() + "-" + date.getUTCMonth() + "-" + date.getUTCFullYear()
+var dateOfLogDaily = day + "-" +  month+ "-" + year;
 
 //Create one folder per  month
-var dateOfLogMonthly = date.getUTCMonth() + "-" + date.getUTCFullYear()
+var dateOfLogMonthly = month + "-" + year;
 
 //Create one folder per year 
-var dateOfLogYearly = date.getUTCFullYear()
+var dateOfLogYearly = year;
                     //-------Date of save : default is daily
 var dateOfLog = dateOfLogMonthly;
 
