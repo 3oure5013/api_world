@@ -21,7 +21,8 @@
             "different_password": "Les deux mots de passes ne correspondent pas",
             "file_unsave" :  "Fichier non enregistrer, veuillez rentrer un fichier correct",
             "not_login" : "Vous n'êtes pas connecter",
-            "user_not_found" : "l'utilisateur avec ce identitifiant n'existe pas"
+            "user_not_found" : "l'utilisateur avec ce identitifiant n'existe pas",
+            "data_not_set" : "Donner non réçus"
 
           },
           "success" : {

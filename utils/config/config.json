@@ -2,7 +2,7 @@
     "base_url": "/api/v1",
     "hostname"  : "localhost",
     "port" : 8080,
-    "token_valid_time" : 3600,
+    "token_valid_time" : 72000,
     "tokenkey" : "$sjkj&ed68daan$5445q7azgzvs5ds&&",
     "appEndpoint": "http://localhost:8080",
     "apiEndpoint": "http://localhost:8080",

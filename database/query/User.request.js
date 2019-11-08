@@ -27,6 +27,15 @@ const findOne = (id) => {
     });
 }
 
+// Find one user with username
+const findOneWithUsername = (username) => {
+  return User.findOne({
+      where: {
+        username: username
+      }
+    });
+}
+
 // Create a new user
 const insert = (firstName, lastName, userName, birthday, email, passwordHashed, pictureName) => {
   return User.create({
@@ -69,6 +78,7 @@ const update = (id, firstName, lastName, userName, birthday, email, passwordHash
 module.exports = {
   insert,
   findOne,
+  findOneWithUsername,
   findAll,
   update,
   destroy

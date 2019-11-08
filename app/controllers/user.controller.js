@@ -151,17 +151,12 @@ exports.getOneUser = (req, res) => {
 
 /*--------------------------------------------------
                   // Update One User
-          --------------------------------------------------*/
+--------------------------------------------------*/
 exports.updateOneUser = async (req, res, next) => {
 
   //The user id
   const userId = req.params.userId
-  console.log(userId)
-  console.log("-------------------------------REQ--------------------")
-  console.log(req)
-
   const data = req.body
-
   console.log("----------req.body----------")
   console.log(data)
   // user all info

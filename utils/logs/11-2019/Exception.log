@@ -1,0 +1,228 @@
+- Date : 2019-11-08T01:56:59.089Z  --  level : [31merror[39m -- message : uncaughtException: Missing initializer in const declaration
+S:\BISMILLAH myWorld\api_nodejs\app\controllers\signin.controller.js:6
+exports.login = (req, res)=> {
+^^^^^^^
+
+SyntaxError: Missing initializer in const declaration
+    at new Script (vm.js:74:7)
+    at createScript (vm.js:246:10)
+    at Object.runInThisContext (vm.js:298:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\app\controllers\token.generator.controller.js:4:26)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\src\routes\login.route.js:3:34)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32) 
+- Date : 2019-11-08T01:58:07.032Z  --  level : [31merror[39m -- message : uncaughtException: Unexpected token )
+S:\BISMILLAH myWorld\api_nodejs\app\controllers\signin.controller.js:17
+    userDbRequest.findOne(username).then(()) 
+                                          ^
+
+SyntaxError: Unexpected token )
+    at new Script (vm.js:74:7)
+    at createScript (vm.js:246:10)
+    at Object.runInThisContext (vm.js:298:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\app\controllers\token.generator.controller.js:4:26)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\src\routes\login.route.js:3:34)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32) 
+- Date : 2019-11-08T01:58:46.473Z  --  level : [31merror[39m -- message : uncaughtException: Unexpected token )
+S:\BISMILLAH myWorld\api_nodejs\app\controllers\signin.controller.js:17
+    userDbRequest.findOne(username).then(()) 
+                                          ^
+
+SyntaxError: Unexpected token )
+    at new Script (vm.js:74:7)
+    at createScript (vm.js:246:10)
+    at Object.runInThisContext (vm.js:298:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\app\controllers\token.generator.controller.js:4:26)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\src\routes\login.route.js:3:34)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32) 
+- Date : 2019-11-08T01:59:03.288Z  --  level : [31merror[39m -- message : uncaughtException: Unexpected token )
+S:\BISMILLAH myWorld\api_nodejs\app\controllers\signin.controller.js:17
+    userDbRequest.findOne(username).then(()) 
+                                          ^
+
+SyntaxError: Unexpected token )
+    at new Script (vm.js:74:7)
+    at createScript (vm.js:246:10)
+    at Object.runInThisContext (vm.js:298:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\app\controllers\token.generator.controller.js:4:26)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\src\routes\login.route.js:3:34)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32) 
+- Date : 2019-11-08T02:16:05.648Z  --  level : [31merror[39m -- message : uncaughtException: Cannot read property 'body' of undefined
+TypeError: Cannot read property 'body' of undefined
+    at Object.exports.configRoutes (S:\BISMILLAH myWorld\api_nodejs\src\routes\routes.js:14:21)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\index.js:75:8)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:742:12)
+    at startup (internal/bootstrap/node.js:266:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:596:3) 
+- Date : 2019-11-08T02:25:27.183Z  --  level : [31merror[39m -- message : uncaughtException: Unexpected token o in JSON at position 1
+SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at bcrypt.compare (S:\BISMILLAH myWorld\api_nodejs\app\controllers\signin.controller.js:36:37) 
+- Date : 2019-11-08T02:26:40.425Z  --  level : [31merror[39m -- message : uncaughtException: Unexpected token o in JSON at position 1
+SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at bcrypt.compare (S:\BISMILLAH myWorld\api_nodejs\app\controllers\signin.controller.js:37:37) 
+- Date : 2019-11-08T03:06:55.396Z  --  level : [31merror[39m -- message : uncaughtException: Unexpected token ,
+S:\BISMILLAH myWorld\api_nodejs\app\controllers\signin.controller.js:30
+    , (err , res)=>{
+    ^
+
+SyntaxError: Unexpected token ,
+    at new Script (vm.js:74:7)
+    at createScript (vm.js:246:10)
+    at Object.runInThisContext (vm.js:298:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\app\controllers\token.generator.controller.js:4:26)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\src\routes\login.route.js:3:34)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32) 
+- Date : 2019-11-08T03:29:37.406Z  --  level : [31merror[39m -- message : uncaughtException: Unexpected token o in JSON at position 1
+SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at bcrypt.compare (S:\BISMILLAH myWorld\api_nodejs\app\controllers\signin.controller.js:29:35) 
+- Date : 2019-11-08T03:30:11.331Z  --  level : [31merror[39m -- message : uncaughtException: Unexpected token o in JSON at position 1
+SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at bcrypt.compare (S:\BISMILLAH myWorld\api_nodejs\app\controllers\signin.controller.js:29:35) 
+- Date : 2019-11-08T03:30:26.076Z  --  level : [31merror[39m -- message : uncaughtException: Unexpected token o in JSON at position 1
+SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at bcrypt.compare (S:\BISMILLAH myWorld\api_nodejs\app\controllers\signin.controller.js:29:35) 
+- Date : 2019-11-08T03:43:19.566Z  --  level : [31merror[39m -- message : uncaughtException: Unexpected identifier
+S:\BISMILLAH myWorld\api_nodejs\app\controllers\signin.controller.js:19
+        var hashedPassword = bcrypt.hashSync(password,10); //COME FROM DATABASE, i crypt the password for simulation
+            ^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier
+    at new Script (vm.js:74:7)
+    at createScript (vm.js:246:10)
+    at Object.runInThisContext (vm.js:298:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\app\controllers\token.generator.controller.js:4:26)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\src\routes\login.route.js:3:34)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32) 
+- Date : 2019-11-08T03:43:35.178Z  --  level : [31merror[39m -- message : uncaughtException: Unexpected identifier
+S:\BISMILLAH myWorld\api_nodejs\app\controllers\signin.controller.js:19
+        var hashedPassword = bcrypt.hashSync(password,10); //COME FROM DATABASE, i crypt the password for simulation
+            ^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier
+    at new Script (vm.js:74:7)
+    at createScript (vm.js:246:10)
+    at Object.runInThisContext (vm.js:298:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\app\controllers\token.generator.controller.js:4:26)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\src\routes\login.route.js:3:34)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32) 
