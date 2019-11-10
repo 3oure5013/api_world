@@ -157,8 +157,10 @@ exports.updateOneUser = async (req, res, next) => {
   //The user id
   const userId = req.params.userId
   const data = req.body
-  console.log("----------req.body----------")
-  console.log(data)
+  console.log("----------req.body----------");
+  console.log(data);
+  console.log("----------req.body----------");
+
   // user all info
   const firstName = data.firstName
   const lastName = data.lastName
@@ -193,18 +195,16 @@ exports.updateOneUser = async (req, res, next) => {
           //If all is ok with our image we get the picture name and save
           const pictureName = imageFolderName + '/'+ result[1].pictureName;
           var passwordHashed = bcrypt.hashSync(password, 10);
-
-          /*-------------------------------------------------
-                            save in database
-                        ----USE DATABASE HERE----
-          --------------------------------------------------*/
           //logger
           logger.info(JSON.stringify(result));
-
+          /*-------------------------------------------------
+                            save in database
+          --------------------------------------------------*/
           //Update the user by id from database
           userDbRequest.update(userId, firstName, lastName, userName, birthday, email, passwordHashed, pictureName)
             .then( //if all is ok
               user => {
+                logger.info("Uer with id : " + userId + " Updated success");
                 res.status(200).json({
                   status: 200,
                   user: user

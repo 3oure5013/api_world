@@ -28,7 +28,7 @@ exports.users  = function (baseUrl,app){
     ]);
 
     //Update one user
-    app.put(baseUrl  + "/user/:userId", [
+    app.put(baseUrl  + "/user/:userId",uploadPictureMiddleware.single('image'), [
         tokenVerification.checkToken, //add permission
         UserController.updateOneUser
     ]);
