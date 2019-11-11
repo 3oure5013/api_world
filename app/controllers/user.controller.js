@@ -204,10 +204,19 @@ exports.updateOneUser = async (req, res, next) => {
           userDbRequest.update(userId, firstName, lastName, userName, birthday, email, passwordHashed, pictureName)
             .then( //if all is ok
               user => {
-                logger.info("Uer with id : " + userId + " Updated success");
+                logger.info("User  id : " + userId + message.success.update);
                 res.status(200).json({
                   status: 200,
-                  user: user
+                  user: user,
+                  new_data :{
+                    firstName,
+                    lastName,
+                    userName,
+                    birthday,
+                    email,
+                    password
+                  } ,
+                  message : message.success.update
                 })
               }).catch((e) => { //if err
               res.status(500).json({
