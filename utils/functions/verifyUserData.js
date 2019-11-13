@@ -12,9 +12,9 @@ const message = require('../config/messages.json').message
 
 // console.log(message.error)
 exports.verifyUserData = (
-  firstName,
-  lastName,
-  userName,
+  firstname,
+  lastname,
+  username,
   birthday,
   email,
   password,
@@ -24,16 +24,16 @@ exports.verifyUserData = (
   //console.log('je verifie')
   var error = false
   if (
-    firstName,
-    lastName != ' ' &&
-    userName != ' ' &&
+    firstname,
+    lastname != ' ' &&
+    username != ' ' &&
     birthday != ' ' &&
     email != ' ' &&
     password != ' ' &&
     passwordConfirm != ''
   ) {
     // username
-    if (!userName /* regexUsername */) {
+    if (!username /* regexUsername */) {
       error = true
       return [
         error,

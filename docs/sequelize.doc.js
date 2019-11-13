@@ -21,11 +21,11 @@ sequelize
 
 const User = sequelize.define('user', {
     // attributes
-    firstName: {
+    firstname: {
       type: Sequelize.STRING,
       allowNull: false
     },
-    lastName: {
+    lastname: {
       type: Sequelize.STRING
       // allowNull defaults to true
     }
@@ -33,12 +33,20 @@ const User = sequelize.define('user', {
     // options
   })
 
+  /*----------------------------------------------------------
+                           //Create a table
+    ------------------------------------------------------------*/  
 
   // Note: using `force: true` will drop the table if it already exists
 User.sync({ force: true }).then(() => {
     // Now the `users` table in the database corresponds to the model definition
     return User.create({
-      firstName: 'John',
-      lastName: 'Hancock'
+      firstname: 'John',
+      lastname: 'Hancock'
     });
   });
+
+
+   /*----------------------------------------------------------
+                           //Make queries
+    ------------------------------------------------------------*/  

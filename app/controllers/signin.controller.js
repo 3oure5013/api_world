@@ -13,7 +13,7 @@ exports.login = (req, res) => {
     var password = req.body.password;
     return new Promise((resolve, reject) => {
 
-        userDbRequest.findOneWithUsername(username)
+        userDbRequest.findOneByUsername(username)
             .then( //if all is ok
                 user => {
                     const userPasswordFromDataBase = user.password;

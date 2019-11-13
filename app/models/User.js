@@ -6,15 +6,15 @@ const {sequelize, Sequelize} = require('../../database/db');
 
 const User = sequelize.define('user', {
     // attributes
-    firstName: {
+    firstname: {
       type: Sequelize.STRING,
       allowNull: false
     },
-    lastName: {
+    lastname: {
       type: Sequelize.STRING
       // allowNull defaults to true
     },
-    userName: {
+    username: {
       type: Sequelize.STRING
       // allowNull defaults to true
     },
@@ -30,9 +30,13 @@ const User = sequelize.define('user', {
       type: Sequelize.STRING
       // allowNull defaults to true
     },
-    pictureName: {
+    picturename: {
       type: Sequelize.STRING
       // allowNull defaults to true
+    },
+    role : {
+      type: Sequelize.BOOLEAN,
+      defaultValue: 0
     },
     createdAt: {
       allowNull: false,

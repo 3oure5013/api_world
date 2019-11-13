@@ -7,7 +7,7 @@ const {
                     Create table
       uncomment this line under to create table
 -------------------------------------------------------*/
-// const migrate = require('../migration');
+//  const migrate = require('../migration');
 
 
 /*-------------------------------------------------------
@@ -19,33 +19,43 @@ const findAll = () => {
 }
 
 // Find one user with id
-const findOne = (id) => {
+const findOneById = (Userid) => {
   return User.findOne({
       where: {
-        id: id
+        id: Userid
       }
     });
 }
 
 // Find one user with username
-const findOneWithUsername = (username) => {
+const findOneByUsername = (username) => {
   return User.findOne({
       where: {
         username: username
-      }
+      } 
     });
 }
 
+// Find one user with email
+const findOneByEmail = (email) => {
+  return User.findOne({
+      where: {
+        email: email
+      } 
+    });
+}
+
+
 // Create a new user
-const insert = (firstName, lastName, userName, birthday, email, passwordHashed, pictureName) => {
+const insert = (firstname, lastname, username, birthday, email, passwordHashed, picturename) => {
   return User.create({
-    firstName: firstName,
-    lastName: lastName,
-    userName: userName,
+    firstname: firstname,
+    lastname: lastname,
+    username: username,
     birthday: birthday,
     email: email,
     password: passwordHashed,
-    pictureName: pictureName,
+    picturename: picturename,
   });
 }
 
@@ -59,15 +69,15 @@ const destroy = (id) => {
 }
 
 // Change everyone without a last name to "Doe"
-const update = (id, firstName, lastName, userName, birthday, email, passwordHashed, pictureName) => {
+const update = (id, firstname, lastname, username, birthday, email, passwordHashed, picturename) => {
   return User.update({
-    firstName: firstName,
-    lastName: lastName,
-    userName: userName,
+    firstname: firstname,
+    lastname: lastname,
+    username: username,
     birthday: birthday,
     email: email,
     password: passwordHashed,
-    pictureName: pictureName,
+    picturename: picturename,
   }, {
     where: {
       id: id
@@ -77,8 +87,9 @@ const update = (id, firstName, lastName, userName, birthday, email, passwordHash
 
 module.exports = {
   insert,
-  findOne,
-  findOneWithUsername,
+  findOneById,
+  findOneByUsername,
+  findOneByEmail,
   findAll,
   update,
   destroy

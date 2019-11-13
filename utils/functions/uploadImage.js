@@ -34,7 +34,7 @@ exports.imageUploadFunction = async (req, res, ImagefolderName) => {
             error,
             {
               status: 200,
-              pictureName: filename,
+              picturename: filename,
               error : ''
             }
           ]
