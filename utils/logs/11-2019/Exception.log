@@ -321,3 +321,39 @@ SyntaxError: missing ) after argument list
     at require (internal/modules/cjs/helpers.js:74:18)
     at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\src\routes\routes.js:4:19)
     at Module._compile (internal/modules/cjs/loader.js:956:30) 
+- Date : 2019-11-14T01:22:32.327Z  --  level : [31merror[39m -- message : uncaughtException: Cannot find module '../../app/models/User'
+Require stack:
+- S:\BISMILLAH myWorld\api_nodejs\database\query\User.request.js
+- S:\BISMILLAH myWorld\api_nodejs\app\controllers\user.controller.js
+- S:\BISMILLAH myWorld\api_nodejs\src\routes\user.route.js
+- S:\BISMILLAH myWorld\api_nodejs\src\routes\routes.js
+- S:\BISMILLAH myWorld\api_nodejs\index.js
+Error: Cannot find module '../../app/models/User'
+Require stack:
+- S:\BISMILLAH myWorld\api_nodejs\database\query\User.request.js
+- S:\BISMILLAH myWorld\api_nodejs\app\controllers\user.controller.js
+- S:\BISMILLAH myWorld\api_nodejs\src\routes\user.route.js
+- S:\BISMILLAH myWorld\api_nodejs\src\routes\routes.js
+- S:\BISMILLAH myWorld\api_nodejs\index.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:794:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:687:27)
+    at Module.require (internal/modules/cjs/loader.js:849:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\database\query\User.request.js:4:5)
+    at Module._compile (internal/modules/cjs/loader.js:956:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)
+    at Module.load (internal/modules/cjs/loader.js:812:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:724:14)
+    at Module.require (internal/modules/cjs/loader.js:849:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\app\controllers\user.controller.js:12:23)
+    at Module._compile (internal/modules/cjs/loader.js:956:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)
+    at Module.load (internal/modules/cjs/loader.js:812:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:724:14)
+    at Module.require (internal/modules/cjs/loader.js:849:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (S:\BISMILLAH myWorld\api_nodejs\src\routes\user.route.js:3:24)
+    at Module._compile (internal/modules/cjs/loader.js:956:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)
+    at Module.load (internal/modules/cjs/loader.js:812:32) 
