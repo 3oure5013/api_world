@@ -2,6 +2,21 @@ const logger = require('../../app/middlewares/logMiddleware').logMiddleware;
 const userDbRequest = require('../../database/query/User.request');
 
 
+//change this by using regex to factorise it 
+data = 1;
+if(isNaN(data)){
+    if(data /*regex email*/){
+        //find by email
+    }else if(data /*Regex username */){
+
+    }else{
+        //message --- not existe
+    }
+}else{
+    //find by id 'cause we have a number       
+}
+
+
 exports.checkUserByEmail = async function (email) {
     var emailExist = false;
     //Before adding user we are checking if this email is not already taken
@@ -17,7 +32,9 @@ exports.checkUserByEmail = async function (email) {
             })
             .catch((e) => { //if err
             logger.error(JSON.stringify(e));
-            res.status(500).json({
+            res.json({
+                error : true,
+                success : false,
                 status: 500,
                 message: "Error :" + e
             });
@@ -38,7 +55,9 @@ exports.checkUserByUsername = async function(username) {
             }
         }).catch((e) => { //if err
         logger.error(JSON.stringify(e));
-        res.status(500).json({
+        res.json({
+            error : true,
+            success : false,
             status: 500,
             message: "Error :" + e
         });

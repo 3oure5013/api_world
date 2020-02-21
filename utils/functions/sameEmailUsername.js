@@ -17,7 +17,9 @@ userDbRequest.findOneById(userId)
       sameUsername = true;
     }
   }).catch((e) => { //if err
-  res.status(500).json({
+  res.json({
+    error : true,
+    success : false,
     status: 500,
     message: "Error :" + e
   });

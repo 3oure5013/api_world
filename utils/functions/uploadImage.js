@@ -6,6 +6,8 @@ const resizeMiddleWare = require('../../app/middlewares/resizeMiddleware')
 
 exports.imageUploadFunction = async (req, res, ImagefolderName) => {
   var error = true;
+    // console.log(req.file);
+
   var imageSaveFolderName = '../../src/public/' + ImagefolderName;
   const imagePath = path.join(__dirname, imageSaveFolderName);
   try {
@@ -15,6 +17,7 @@ exports.imageUploadFunction = async (req, res, ImagefolderName) => {
     if (!req.file) {
       return {
         status: 400,
+        success : false,
         error: message.error.file_upload_error,
         error: message.error.file_upload_error
       }
@@ -25,7 +28,7 @@ exports.imageUploadFunction = async (req, res, ImagefolderName) => {
         console.log('---------------------filename')
         console.log(filename)
         // verify if image is saved
-        if (filename != ' ') {
+        if (filename != '' && filename != null) {
           // we give false to error to tell that all is ok
           error = false
           // return image  info after save
@@ -35,7 +38,8 @@ exports.imageUploadFunction = async (req, res, ImagefolderName) => {
             {
               status: 200,
               picturename: filename,
-              error : ''
+              error : error,
+              success : true
             }
           ]
           return imageSaveState
@@ -45,6 +49,7 @@ exports.imageUploadFunction = async (req, res, ImagefolderName) => {
             error,
             {
               status: 400,
+              success : false,
               message: message.error.file_unsave,
               error : message.error.file_unsave
             }
@@ -56,6 +61,7 @@ exports.imageUploadFunction = async (req, res, ImagefolderName) => {
           error,
           {
             status: 400,
+            success : false,
             message: message.error.file_unsave,
             error: error
           }
@@ -68,6 +74,7 @@ exports.imageUploadFunction = async (req, res, ImagefolderName) => {
       error,
       {
         status: 400,
+        success : false,
         message: message.error.file_upload_error,
         error: error
       }

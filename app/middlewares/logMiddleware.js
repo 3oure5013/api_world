@@ -5,7 +5,7 @@ const date = new Date();
 
 /*-------------------------------------------------------------------------------------------------------------------------------------
         Here I'll go use the date to give ti file name : this 'll permit to have one folder dayly, monthly or yearly
-            For changing the save time change dateOfLog to dateOfLogDaily or dateOfLogMonthly or dateOfLogYearly
+            For changing the save time change dateOfLog to dateOfLogDaily or dateOfLogMonthly or dateOfLogYearly.
 //-------------------------------------------------------------------------------------------------------------------------------------*/
 
 const day =date.getUTCDate() ;
@@ -20,7 +20,8 @@ var dateOfLogMonthly = month + "-" + year;
 
 //Create one folder per year 
 var dateOfLogYearly = year;
-                    //-------Date of save : default is daily
+
+//-------Date of save : default is daily-------
 var dateOfLog = dateOfLogMonthly;
 
 
@@ -44,17 +45,17 @@ const errorConfig =    new winston.transports.File({
         });
 
 const debugConfig = new winston.transports.File({
-        filename : './utils/logs/'+ dateOfLog +'/debug.log',
+        filename : `./utils/logs/${dateOfLog}/debug.log`,
         level : 'debug',
     });
 
 const warningConfig = new winston.transports.File({
-            filename : './utils/logs/'+ dateOfLog +'/warning.log',
+            filename : `./utils/logs/${dateOfLog}/warning.log`,
             level : 'warn',
     });
 
 const sillyCongig = new winston.transports.File({
-            filename : './utils/logs/'+ dateOfLog +'/silly.log',
+            filename : `./utils/logs/${dateOfLog}/silly.log`,
             level : 'silly',
     });
 

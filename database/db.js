@@ -5,19 +5,19 @@
     const Sequelize = require('sequelize');
     const dbConfig = require('../utils/config/dbConfig.json');
     
-   // console.log(dbConfig.mariadb.databaseName +"," + dbConfig.mariadb.username +"," +dbConfig.mariadb.password)
+    console.log(dbConfig.bd.databaseName +"," + dbConfig.bd.username +"," +dbConfig.bd.password)
     
     // Option 1: Passing parameters separately
-    const sequelize = new Sequelize(dbConfig.mariadb.databaseName, dbConfig.mariadb.username,dbConfig.mariadb.password, {
-      host: dbConfig.mariadb.host,
-      dialect: dbConfig.mariadb.dialect, /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
+    const sequelize = new Sequelize(dbConfig.bd.databaseName, dbConfig.bd.username,dbConfig.bd.password, {
+      host: dbConfig.bd.host,
+      dialect: dbConfig.bd.dialect, /* this permit to specify type of database between one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
       dialectOptions : {
         timezone : process.env.db_timezone
       },
       port : process.env.db_port,
       pool : dbConfig.options.pool,
       define : {
-        timestamp : false
+        timestamp : false 
       },
       benchmark : false,
       logging: false

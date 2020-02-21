@@ -12,6 +12,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const expressValidator = require('express-validator')
 const config = require('./utils/config/config.json');
 //defining the Express App
 const app = express();
@@ -19,26 +20,32 @@ const app = express();
 //Variables
 const baseUrl = config.base_url;
 const publicPath = path.join(__dirname, config.public_file);
+const publicPathImageProfil = path.join(__dirname, config.public_path_image_profil);
 
 /* ----------------------------------------------------------------------------------
                                 MIDDLEWARE
 -----------------------------------------------------------------------------------*/
+//Adding morgan to log HTTP requests
+app.use(morgan('combined'));
+
 // Adding helmet to enhance your API's security 
 app.use(helmet() );
 
-// Using body parser to parse JSON bodies into JS objects
 
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+// Using body parser to parse JSON bodies into JS objects
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
+//express validator
+//app.use(expressValidator());
+
 
 //Enabling CORS
 app.use(cors());
 
-//Adding morgan to log HTTP requests
-app.use(morgan('combined'));
-
 //Static file 
 app.use(express.static(publicPath));
+app.use(express.static(publicPathImageProfil));
 
 
 
@@ -72,8 +79,12 @@ routes.configRoutes(baseUrl, app);
 
 //undefined routes (404)
 app.use("/*", (req,res)=>{
-    res.status(500).json(
+    var welcome = "----------------------------------------------------------<br>";
+     welcome +=   " -- Bienvenue sur api v1, ton baseUrl est "+  baseUrl +"--<br>";
+     welcome +=   "----------------------------------------------------------<br>";
+    res.status(404).json(
         {
+            api : welcome,
             "error":true,
             "status":404,
             "message":"Page not found"

@@ -1,61 +1,79 @@
 const jwt = require('jsonwebtoken');
 const config = require('../../utils/config/config.json');
 const verifyTokenMiddleware = require('../middlewares/tokenVerificationMiddleware');
-const signinController = require('./signin.controller');
+const signinController = require('./auth.controller');
 const message = require('../../utils/config/messages.json').message;
-
+const logger = require('../middlewares/logMiddleware').logMiddleware;
 class tokenGenerator {
     loginVerification(req, res) {
-        var loginState = signinController.login(req, res)
+        var loginState = signinController.login(req, res);
 
         loginState.then((loginStateResult) => {
-
-            console.log("loginState----------------")
-            console.log(loginStateResult)
-            console.log("loginState----------------")
 
             if(loginStateResult.error == false){
                     const secret = config.tokenkey;
                     let username = loginStateResult.username;
-                    let password = loginStateResult.password;
+                    // let password = loginStateResult.password;
                     //Generation du token
+                    const loginDate = new Date();
+
+                
                     let token = jwt.sign(
                         {
-                            username:username
+                            username:username,
+                            loginDate : loginDate
                         },
                         secret,
                         {
                             //additional parameters to token , le token est valable un jour
                             expiresIn : config.token_valid_time
                         });
-                    //return the JWT token for the future Api calls
-                    res.status(200).json({
+                    //return the data to return to user after login
+                    const user_info = {
+                        id : loginStateResult.user.id,
+                        email : loginStateResult.user.email,
+                        username : loginStateResult.user.username,
+                        firstname : loginStateResult.user.firstname,
+                        lastname : loginStateResult.user.lastname,
+                        birthday : loginStateResult.user.birthday,
+                        picturename : loginStateResult.user.picturename, 
+                    }
+                    res.json({
                         error : false,
+                        success : true,
+                        status: 200,
                         message : message.success.login,
-                        token: token
+                        token: token,
+                        role :  loginStateResult.user.role,
+                        user_info : user_info
                     })
             }else{
                 //-------------auth failed------------
-                res.status(400).json({
-                    error:true,
-                    message : message.error.login_failed
+                res.json({
+                    error: true,
+                    success: false,
+                    status: 400,
+                    message : loginStateResult.message
                 })
             }
         }).catch((err) => {
-            console.log(err)
-            res.status(400).json({
-                error:true,
-                message : message.error.login_failed,
-                err : err
+            logger.error(JSON.stringify(err));
+            console.log(JSON.stringify(err.message));
+            res.json({
+                error: true,
+                success: false,
+                status: 400,
+                message : err.message,
             })
         })
-
     }
 
 
     index(req, res) {
-        res.status(200).json({
+        res.json({
             error: false,
+            success : true,
+            status : 200,
             message: "Bienvenue sur l'api v1"
         })
     }

@@ -11,6 +11,7 @@
       "PAID_USER": 4,
       "ADMIN": 2048
     },
-    "public_file" : "./src/public"
+    "public_file" : "./src/public",
+    "public_path_image_profil" : "./src/public/profil_picture"
 }
   

@@ -25,6 +25,10 @@ For one Model follow this instructions :
     * import your Model
     * add your different request, you can just copy User.request.js and edit it
 
+
+----------------------------------------------------------
+                 Create your Controller
+----------------------------------------------------------
 -Import the query in your controller and add the corresponding functions to his corresponding controller
 
 ----------------------------------------------------------
@@ -33,4 +37,5 @@ For one Model follow this instructions :
     -Import your db/connexion in migration
     -Import your Model
     -Update the migration file and import in your query file see the example of user
-    -Execute after the table creation comment the import the migration import line
+    -Execute migration file
+    -after the table creation comment the 'import migration' line

@@ -2,7 +2,7 @@
 const path = require("path");
 const bcrypt = require("bcrypt");
 
-// Personal modules
+// Personal mod ules
 const message = require("../../utils/config/messages").message;
 const verifyData = require("../../utils/functions/verifyUserData");
 const {
@@ -21,17 +21,20 @@ const date = new Date();
 ---------------------------------------------------------------------------*/
 exports.addOneUser = async (req, res, next) => {
   const data = req.body;
+  console.log(data);
   // user all info
-  const firstname = data.firstname;
-  const lastname = data.lastname;
-  const username = data.username;
-  const birthday = data.birthday;
-  const email = data.email;
-  const password = data.password;
-  const passwordConfirm = data.passwordConfirm;
+  const firstname = data.firstname.trim();
+  const lastname = data.lastname.trim();
+  const username = data.username.trim();
+  const birthday = data.birthday.trim();
+  const email = data.email.trim();
+  const password = data.password.trim();
+  const passwordConfirm = data.passwordConfirm.trim();
 
   // verifyData : we use function to check if all of user data sent by user are OK
   const dataVerificationReturn = await verifyData.verifyUserData(
+    req, 
+    res,
     firstname,
     lastname,
     username,
@@ -43,7 +46,7 @@ exports.addOneUser = async (req, res, next) => {
 
   // A dataVerificationReturn: if all we verify the image using imageUploadFunction();
 
-  if (dataVerificationReturn[0] == false) {
+  if (dataVerificationReturn[0] == false)  {
     //We check if username or email isn't already took
     const emailCheckReturn = checkUserByUsernameAndEmail.checkUserByEmail(
       email
@@ -51,6 +54,9 @@ exports.addOneUser = async (req, res, next) => {
     const usernameCheckReturn = checkUserByUsernameAndEmail.checkUserByUsername(
       username
     );
+
+    // const emailCheckReturn = checkUserByUsernameAndEmail.checkUserByEmail( email , username);
+
     emailCheckReturn
       .then(emailExistReturn => {
         console.log(emailExistReturn);
@@ -167,6 +173,7 @@ exports.getAllUser = (req, res) => {
       users => {
         logger.info("get All user with success");
         res.status(200).json({
+          success: true,
           status: 200,
           users: users,
         });
@@ -175,6 +182,7 @@ exports.getAllUser = (req, res) => {
     .catch(e => {
       //if err
       res.status(500).json({
+        success: false,
         status: 500,
         message: "Error :" + e,
       });
@@ -197,14 +205,25 @@ exports.getOneUser = (req, res) => {
       //if all is ok
       user => {
         res.status(200).json({
+          success: true,
           status: 200,
-          user: user,
+          user : {
+            id : user.id,
+            email : user.email,
+            username : user.username,
+            firstname : user.firstname,
+            lastname : user.lastname,
+            birthday : user.birthday,
+            picturename : user.picturename, 
+            role : user.role
+          }
         });
       }
     )
     .catch(e => {
       //if err
       res.status(500).json({
+        success: false,
         status: 500,
         message: "Error :" + e,
       });
@@ -230,6 +249,8 @@ exports.updateOneUser = async (req, res, next) => {
 
   // verifyData : we use function to check if all of user data sent by user are OK
   const dataVerificationReturn = await verifyData.verifyUserData(
+    req,
+    res,
     firstname,
     lastname,
     username,
@@ -246,6 +267,7 @@ exports.updateOneUser = async (req, res, next) => {
     console.log(user);
     if (!user) {
       res.status(400).json({
+        success: false,
         status: 400,
         message: "Utilisateur avec cet id n'existe pas",
       });
@@ -276,6 +298,7 @@ exports.updateOneUser = async (req, res, next) => {
           /*Email  already taken*/
           emailOk = false;
           res.status(400).json({
+            success: false,
             status: 400,
             message: "email deja pris par un autre utilisateur",
           });
@@ -292,6 +315,7 @@ exports.updateOneUser = async (req, res, next) => {
           console.log("username deja pris par un autre utilisateur");
           usernameOk = false;
           res.status(400).json({
+            success: false,
             status: 400,
             message: "username deja pris par un autre utilisateur",
           });
@@ -335,6 +359,7 @@ exports.updateOneUser = async (req, res, next) => {
                       "User  id : " + userId + message.success.update
                     );
                     res.status(200).json({
+                      success: true,
                       status: 200,
                       user: user,
                       new_data: {
@@ -352,6 +377,7 @@ exports.updateOneUser = async (req, res, next) => {
                 .catch(e => {
                   //if err
                   res.status(500).json({
+                    success: false,
                     status: 500,
                     message: "Error :" + JSON.stringify(e),
                   });
@@ -359,19 +385,26 @@ exports.updateOneUser = async (req, res, next) => {
             } else {
               // Something went wrong when trying to save image get the error message to return to user
               logger.error(JSON.stringify(result));
-              res.status(500).send(result);
+              res.status(500).json({
+                success: false,
+                message: JSON.stringify(result)
+              });
             }
           })
           .catch(e => {
-            res.status(500).send("Error" + JSON.stringify(e));
+            res.status(500).json({
+              success: false,
+              message: JSON.stringify(e)
+            });
           });
       }
     }
   } else {
     var error = dataVerificationReturn;
     res.status(400).json({
+      success: false,
       status: 400,
-      message: error,
+      message: JSON.stringify(error),
     });
   }
 };
@@ -398,6 +431,7 @@ exports.deleteOneUser = (req, res) => {
                   //if all is ok
                   user => {
                     res.status(200).json({
+                      success: true,
                       status: 200,
                       message: "id  = " + userId + " ... " + message.success.delete,
                     });
@@ -406,13 +440,15 @@ exports.deleteOneUser = (req, res) => {
                 .catch(e => {
                   //if err
                   res.status(500).json({
+                    success: false,
                     status: 500,
                     message: "Error :" + e,
                   });
                 });
             } else {
               //if he isn't exist
-              res.status(200).json({
+              res.status(404).json({
+                success: false,
                 status: 404,
                 message: "id  = " + userId + " ... " + message.error.user_not_found,
               });
@@ -421,6 +457,7 @@ exports.deleteOneUser = (req, res) => {
           .catch(e => {
             //if err
             res.status(500).json({
+              success: false,
               status: 500,
               message: "Error :" + e,
             });
@@ -430,6 +467,7 @@ exports.deleteOneUser = (req, res) => {
     .catch(e => {
       //if err
       res.status(500).json({
+        success: false,
         status: 500,
         message: "Error :" + e,
       });

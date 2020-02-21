@@ -15,6 +15,8 @@ exports.updateOneUser = async (req, res, next) => {
 
   // verifyData : we use function to check if all of user data sent by user are OK
   const dataVerificationReturn = await verifyData.verifyUserData(
+    req,
+    res,
     firstname,
     lastname,
     username,
@@ -53,7 +55,9 @@ exports.updateOneUser = async (req, res, next) => {
                     .then( //if all is ok
                       user => {
                         logger.info("User  id : " + userId + message.success.update);
-                        res.status(200).json({
+                        res.json({
+                          error : false,
+                          success : true,
                           status: 200,
                           user: user,
                           new_data: {

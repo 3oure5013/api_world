@@ -2,7 +2,7 @@
                         Modules
 -------------------------------------------------------*/
 const userRoute = require('./user.route');
-const loginRoute = require('./login.route')
+const authRoute = require('./auth.route')
 
 
 
@@ -12,5 +12,5 @@ const loginRoute = require('./login.route')
 -------------------------------------------------------*/
 exports.configRoutes = (baseUrl, app) =>{
     userRoute.users(baseUrl, app);
-    loginRoute.login(baseUrl, app);
+    authRoute.auth(baseUrl, app);
 }

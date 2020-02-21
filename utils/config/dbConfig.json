@@ -1,7 +1,11 @@
 {
     "bd": {
-        "host": "host",
-        "dialect": "bdtype"
+        "dialect": "mariadb",
+        "host"  : "localhost",
+        "username"  : "root",
+        "password"  : "",
+        "databaseName"  : "api",
+        "debug"    :  true
     },
     "options" : {
         "pool": {
@@ -18,7 +22,6 @@
         "password"  : "",
         "databaseName"  : "api",
         "debug"    :  true
-
     },
     "mysql" :
     {

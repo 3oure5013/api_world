@@ -1,7 +1,7 @@
 // ./utils/functions/verifuUserData
 
 //Require express validator to verify if all user data are correct
-//const expressValidator = require('express-validator')
+const expressValidator = require('express-validator')
 
 /*---------------------------------------------------------
                     PERSONAL MODULE
@@ -12,6 +12,8 @@ const message = require('../config/messages.json').message
 
 // console.log(message.error)
 exports.verifyUserData = (
+  req,
+  res,
   firstname,
   lastname,
   username,
@@ -25,11 +27,11 @@ exports.verifyUserData = (
   var error = false
   if (
     firstname,
-    lastname != ' ' &&
-    username != ' ' &&
-    birthday != ' ' &&
-    email != ' ' &&
-    password != ' ' &&
+    lastname != '' &&
+    username != '' &&
+    birthday != '' &&
+    email != '' &&
+    password != '' &&
     passwordConfirm != ''
   ) {
     // username
@@ -84,5 +86,5 @@ exports.verifyUserData = (
       status: 200,
       message: 'SUCCESS  : ' + message.success.correct
     }
-  ]
+  ];
 }

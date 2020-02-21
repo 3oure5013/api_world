@@ -1,0 +1,16 @@
+- Date : 2020-02-21T09:03:17.069Z  --  level : [31merror[39m -- message : uncaughtException: Unexpected token ,
+S:\BISMILLAH myWorld\api_nodejs\database\db.js:11
+    const sequelize = new Sequelize(dbConfig., dbConfig.mariadb.username,dbConfig.mariadb.password, {
+                                             ^
+
+SyntaxError: Unexpected token ,
+    at new Script (vm.js:79:7)
+    at createScript (vm.js:251:10)
+    at Object.runInThisContext (vm.js:303:10)
+    at Module._compile (internal/modules/cjs/loader.js:657:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18) 
