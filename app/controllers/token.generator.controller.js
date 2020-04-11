@@ -10,50 +10,48 @@ class tokenGenerator {
 
         loginState.then((loginStateResult) => {
 
-            if(loginStateResult.error == false){
-                    const secret = config.tokenkey;
-                    let username = loginStateResult.username;
-                    // let password = loginStateResult.password;
-                    //Generation du token
-                    const loginDate = new Date();
+            if (loginStateResult.error == false) {
+                const secret = config.tokenkey;
+                let username = loginStateResult.username;
+                // let password = loginStateResult.password;
+                //Generation du token
+                const loginDate = new Date();
 
-                
-                    let token = jwt.sign(
-                        {
-                            username:username,
-                            loginDate : loginDate
-                        },
-                        secret,
-                        {
-                            //additional parameters to token , le token est valable un jour
-                            expiresIn : config.token_valid_time
-                        });
-                    //return the data to return to user after login
-                    const user_info = {
-                        id : loginStateResult.user.id,
-                        email : loginStateResult.user.email,
-                        username : loginStateResult.user.username,
-                        firstname : loginStateResult.user.firstname,
-                        lastname : loginStateResult.user.lastname,
-                        birthday : loginStateResult.user.birthday,
-                        picturename : loginStateResult.user.picturename, 
-                    }
-                    res.json({
-                        error : false,
-                        success : true,
-                        status: 200,
-                        message : message.success.login,
-                        token: token,
-                        role :  loginStateResult.user.role,
-                        user_info : user_info
-                    })
-            }else{
+
+                let token = jwt.sign({
+                        username: username,
+                        loginDate: loginDate
+                    },
+                    secret, {
+                        //additional parameters to token , le token est valable un jour
+                        expiresIn: config.token_valid_time
+                    });
+                //return the data to return to user after login
+                const user_info = {
+                    id: loginStateResult.user.id,
+                    email: loginStateResult.user.email,
+                    username: loginStateResult.user.username,
+                    firstname: loginStateResult.user.firstname,
+                    lastname: loginStateResult.user.lastname,
+                    birthday: loginStateResult.user.birthday,
+                    picturename: loginStateResult.user.picturename,
+                }
+                res.json({
+                    error: false,
+                    success: true,
+                    status: 200,
+                    message: message.success.login,
+                    token: token,
+                    role: loginStateResult.user.role,
+                    user_info: user_info
+                })
+            } else {
                 //-------------auth failed------------
                 res.json({
                     error: true,
                     success: false,
                     status: 400,
-                    message : loginStateResult.message
+                    message: loginStateResult.message
                 })
             }
         }).catch((err) => {
@@ -63,7 +61,7 @@ class tokenGenerator {
                 error: true,
                 success: false,
                 status: 400,
-                message : err.message,
+                message: err.message,
             })
         })
     }
@@ -72,8 +70,8 @@ class tokenGenerator {
     index(req, res) {
         res.json({
             error: false,
-            success : true,
-            status : 200,
+            success: true,
+            status: 200,
             message: "Bienvenue sur l'api v1"
         })
     }
